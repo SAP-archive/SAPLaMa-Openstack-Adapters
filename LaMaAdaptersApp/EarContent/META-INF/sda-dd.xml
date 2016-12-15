@@ -1,0 +1,17 @@
+<SDA>
+<SoftwareType>J2EE</SoftwareType>
+<engine-deployment-descriptor version="2.0">
+    <substitution-variable>
+      <variable-name>com.sap.dc_name</variable-name>
+    </substitution-variable>
+    <substitution-variable>
+      <variable-name>com.sap.dc_vendor</variable-name>
+    </substitution-variable>
+    <substitution-variable>
+      <variable-name>com.sap.sld.GatewayHost</variable-name>
+    </substitution-variable>
+    <substitution-variable>
+      <variable-name>com.sap.sld.GatewayService</variable-name>
+    </substitution-variable>
+</engine-deployment-descriptor>
+</SDA>

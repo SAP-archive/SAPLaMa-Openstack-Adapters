@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application-j2ee-engine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="application-j2ee-engine.xsd">
+	<reference reference-type="hard">
+		<reference-target provider-name="sap.com" target-type="application">tc/vcm/base/app</reference-target>
+	</reference>
+	<reference reference-type="hard">
+		<reference-target provider-name="sap.com" target-type="application">tc/vcm/virtual/adapter/app</reference-target>
+	</reference>
+	<reference reference-type="hard">
+		<reference-target provider-name="sap.com" target-type="application">tc/vcm/storage/adapter/app</reference-target>
+	</reference>
+	<start-up mode="always"/>
+</application-j2ee-engine>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Implementation-Title: LaMaAdaptersApp
+Implementation-Version: 2016.12.12.10.47.41
+Implementation-Vendor-Id: sap.com
+Specification-Vendor: SAP AG
+

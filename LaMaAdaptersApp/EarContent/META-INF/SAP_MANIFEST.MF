@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Ext-SDM-SDA-Comp-Version: 1
+softwaretype: J2EE
+JarSAP-Standalone-Version: 20090803.1000
+JarSAPProcessing-Version: 20090907.1000
+deployfile: sda-dd.xml
+archivetype: DC
+JarSAP-Version: 20090803.1000
+keyname: LaMaAdaptersApp
+keyvendor: sap.com
+keylocation: localhost
+keycounter: 2016.16.12.10.47.41
+componentelement: <componentelement  name="LaMaAdaptersApp" vendor="sa
+ p.com" componenttype="DC" subsystem="NO_SUBSYS" location="localhost" c
+ ounter="2016.12.12.10.47.41" deltaversion="F" updateversion="LB-201510
+ 07104742" componentprovider="SAP AG" archivetype="DC"/> 
+dependencies: <dependency  Implementation-Title="tc/vcm/base/app" Implementation-Ven
+ dor-Id="sap.com" /> <dependency  Implementation-Title="tc/vcm/virtual/
+ adapter/app" Implementation-Vendor-Id="sap.com" /> <dependency  Implem
+ entation-Title="tc/vcm/storage/adapter/app" Implementation-Vendor-Id="sap.com" 
+ /> 
+dependencylist: <dependency  keyname="tc/vcm/base/app" keyvendor="sap.com" /> <depende
+ ncy  keyname="tc/vcm/virtual/adapter/app" keyvendor="sap.com" /> <depe
+ ndency  keyname="tc/vcm/storage/adapter/app" keyvendor="sap.com" /> 
+JarSL-Version: 20100616.1800
+compress: true
+

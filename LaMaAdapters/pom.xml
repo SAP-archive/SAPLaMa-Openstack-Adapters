@@ -1,0 +1,162 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sap.vcm</groupId>
+	<artifactId>LaMaAdapters</artifactId>
+	<version>1.3.0</version>
+	<packaging>war</packaging>
+	<name>LaMaAdapters</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<description>LaMa Adapters for Openstack source</description>
+  
+	<reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.9</version>
+      </plugin>
+    </plugins>
+  </reporting>
+  
+	<dependencies>
+		<dependency>
+			<groupId>com.sap.vcm</groupId>
+			<artifactId>sap.com.tc.vcm.virtual.adapter.app.VirtualizationAPI</artifactId>
+			<version>3.0</version>
+    </dependency>
+
+  	<dependency>
+	   	<groupId>com.sap.vcm</groupId>
+			<artifactId>sap.com.tc.vcm.storage.adapter.app.StorageAPI</artifactId>
+			<version>3.0</version>
+  	</dependency>
+
+  	<dependency>
+			<groupId>com.sap.vcm</groupId>
+			<artifactId>sap.com.tc.vcm.base.app.InfrastructureAPI</artifactId>
+			<version>3.0</version>
+  	</dependency>
+    
+    <dependency>
+      <groupId>org.pacesys</groupId>
+      <artifactId>openstack4j-core</artifactId>
+      <version>3.0.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.pacesys.openstack4j.connectors</groupId>
+      <artifactId>openstack4j-jersey2</artifactId>
+      <version>3.0.2</version>
+    </dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+					<show>private</show>
+					<nohelp>true</nohelp>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration>
+					<finalName>LaMaAdaptersApp</finalName>
+					<version>1</version>
+					<generatedDescriptorLocation>src/main/application/META-INF</generatedDescriptorLocation>
+					<modules>
+						<webModule>
+							<groupId>com.sap.vcm</groupId>
+							<artifactId>maven-war-plugin</artifactId>
+							<uri>LaMaAdaptersApp.ear</uri>
+							<bundleFileName>LaMaAdapters-1.3.0.war</bundleFileName>
+							<contextRoot>/LaMaAdapters</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.sap.vcm</groupId>
+						<artifactId>LaMaAdapters</artifactId>
+						<version>1.3.0</version>
+						<type>war</type>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<natures>
+						<nature>org.eclipse.jdt.core.javanature</nature>
+						<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+						<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
+						<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
+					</natures>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.sap.vcm</groupId>
+						<artifactId>LaMaAdapters</artifactId>
+						<version>1.3.0</version>
+						<type>war</type>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+				<executions>
+					<execution>
+						<id>Install-LaMaAdaptersOpenstack-war</id>
+						<phase>package</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>LaMaAdapters</artifactId>
+							<version>${project.version}</version>
+							<packaging>war</packaging>
+							<file>target\LaMaAdapters-1.3.0.war</file>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
