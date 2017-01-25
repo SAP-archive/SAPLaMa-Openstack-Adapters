@@ -1,9 +1,14 @@
 # SAPLaMa-Openstack-Adapters
 Virtualization and storage adapters that enable users to manage their OpenStack clouds via SAP Landscape Management (SAP LaMa), including all SAP LaMa functions e.g. copy, clone, relocate, refresh, etc. While these adapters, provided by SAP, are tested with Suse Cloud 6, everyone can customize them to work with their own environments.
 
+* This storage adapter is for SAP LaMa 3.X releases only  
+* This build is based on Openstack4j 3.0.2
+* This build needs Java 8
+* This build supports V3 authentication with SAP LaMa 3.X - e.g. http://Openstack_hostname:5000/v3.0
+
 ## How is it done?
 
-This OpenStack virtualization adapter and storage adapter that connects SAP LVM to OpenStack works similarly to other SAP LaMa adapters, the main difference being that this one is open source with Apache License Version 2.0. We use Apache Maven (https://maven.apache.org/) to build the war files and package them into the deployable ear file. We used the OpenStack4j (http://openstack4j.com/) library to interact with the OpenStack server web services. These dependencies will be automatically downloaded from maven repository during the build process.  
+This OpenStack virtualization adapter and storage adapter that connects SAP LaMa to OpenStack works similarly to other SAP LaMa adapters, the main difference being that this one is open source with Apache License Version 2.0. We use Apache Maven (https://maven.apache.org/) to build the war files and package them into the deployable ear file. We used the OpenStack4j (http://openstack4j.com/) library to interact with the OpenStack server web services. These dependencies will be automatically downloaded from maven repository during the build process.  
 
 
 ##Building, installing and using the adapters
@@ -14,7 +19,7 @@ The OpenStack adapters, StorageManager  and Virtualization Manager, compile to a
 
 Here are the instructions for downloading, compiling and deploying the SAP LaMa Openstack Virtualization and Storage adapters. 
 
-note: rather than go through the build steps below, users can deploy the  precompiled .ear file in https://github.com/SAP/SAPLaMa-Openstack-Adapters/blob/master/LVMAdaptersApp/target/LVMAdaptersApp-1.0.ear
+note: rather than go through the build steps below, users can deploy the  precompiled .ear file in https://github.com/SAP/SAPLaMa-Openstack-Adapters/blob/master/LaMaAdaptersApp/target/LaMaAdaptersApp-1.3.0.ear
 
 You need git client installed locally to clone the project, I’ve tested with: git version 2.11.0.windows.1
 
