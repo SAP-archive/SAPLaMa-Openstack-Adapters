@@ -6,7 +6,7 @@ Virtualization and storage adapters that enable users to manage their OpenStack 
 * This build needs Java 8
 * This build supports V3 authentication with SAP LaMa 3.X - e.g. http://Openstack_hostname:5000/v3.0
 * This build was tested on SUSE Cloud 6 with Netapp storage as backend
-*
+
 
 ## How is it done?
 
